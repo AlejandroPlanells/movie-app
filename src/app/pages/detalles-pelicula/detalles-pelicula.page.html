@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{content?.Title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="content">
+    <ion-card-header text-center>
+      <h3><strong>{{content?.Title}}</strong></h3>
+    </ion-card-header>
+    <ion-card-content>
+      
+      <strong>Año: </strong>{{content.Year}} <br> 
+      <strong>Idioma original:</strong> {{content.Language}} <br>
+      <strong>Director: </strong>{{content?.Director}} <br>
+      <strong>Actores: </strong>{{content?.Actors}} <br>
+      <hr>
+
+      <strong>Descripción: </strong>{{content.Plot}} <br><br>
+
+      
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

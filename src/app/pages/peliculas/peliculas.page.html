@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Peliculas APP Okode</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="term" (ionChange)="searchChanged($event)"></ion-searchbar>
+  
+  <ion-list>
+    <ion-item button *ngFor="let pelicula of (results | async)" [routerLink]="['/','detalles-pelicula', pelicula.imdbID]">
+      <ion-label>
+        <h3>{{pelicula.Title}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
