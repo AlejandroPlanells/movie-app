@@ -12,13 +12,13 @@ export class PeliculasService {
   constructor(private htttp: HttpClient) { }
 
   searchMovies(title:string){
-    this.url = `http://www.omdbapi.com/?s=${encodeURI(title)}&apikey=${this.apiKey}`;
+    this.url = `https://www.omdbapi.com/?s=${encodeURI(title)}&apikey=${this.apiKey}`;
     console.log(this.url);
     return this.htttp.get<InterfacePeliculas>(this.url).pipe(map(results => results["Search"]));
   }
 
   getDetails(id:string){
-    return this.htttp.get<InterfacePeliculas>(`http://www.omdbapi.com/?i=${id}&splot=full&apikey=${this.apiKey}`);
+    return this.htttp.get<InterfacePeliculas>(`https://www.omdbapi.com/?i=${id}&splot=full&apikey=${this.apiKey}`);
   }
 
 }
